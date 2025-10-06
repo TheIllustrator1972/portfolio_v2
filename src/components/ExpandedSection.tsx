@@ -2,6 +2,8 @@
 import { AnimatePresence, motion } from "framer-motion";
 import { X } from "lucide-react";
 import SkillsBubbleChart from "./Sections/SkillsBubbleChart";
+import Projects from "./Sections/Projects/IndieApps";
+import WebProjectsSection from "./Sections/Projects/WebProjects";
 
 // 1. Define the props interface
 interface SectionConfigItem {
@@ -23,7 +25,7 @@ export default function ExpandedSection({
   sectionConfig,
   clickPosition,
 }: ExpandedSectionProps) {
-  // Get the configuration for the active section
+
   const currentSection = sectionConfig.find((s) => s.key === activeSection);
   const Icon = currentSection?.icon;
 
@@ -111,9 +113,10 @@ export default function ExpandedSection({
                 }`}
               >
                 {activeSection === "Projects" && (
-                  <div className="space-y-6">
-                    <p className="text-xl">Your Projects content here...</p>
-                    <p>This is where your detailed projects info will go.</p>
+                  <div className="flex flex-col items-center justify-center w-full">
+                    <WebProjectsSection />
+                    <Projects />
+                    
                   </div>
                 )}
                 {activeSection === "Experience" && (

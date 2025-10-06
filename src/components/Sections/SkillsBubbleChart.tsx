@@ -69,6 +69,7 @@ export const skillsConfig = [
     { id: "go", skill: "Go", icon: SiGo, color: "#00ADD8", usage: 50, description: "Used for building performant microservices, CLI tools, and network programming." },
     { id: "shell", skill: "Shell/Bash", icon: SiGnubash, color: "#4EAA25", usage: 70, description: "Automation of deployment, build scripts, server management, and system tasks." },
     { id: "tailwind", skill: "Tailwind", icon: RiTailwindCssFill, color: "#3B82F6", usage: 70, description: "Utility-first CSS framework for rapid and consistent styling of React components." },
+    { id: "tailwind", skill: "WebGL", icon: RiTailwindCssFill, color: "#3B82F6", usage: 70, description: "Utility-first CSS framework for rapid and consistent styling of React components." },
 ];
 
 export default function SkillsBubbleChart() {
