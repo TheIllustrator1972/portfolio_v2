@@ -4,6 +4,7 @@ import { X } from "lucide-react";
 import SkillsBubbleChart from "./Sections/SkillsBubbleChart";
 import Projects from "./Sections/Projects/IndieApps";
 import WebProjectsSection from "./Sections/Projects/WebProjects";
+import Experience from "./Sections/Experience";
 
 // 1. Define the props interface
 interface SectionConfigItem {
@@ -77,30 +78,8 @@ export default function ExpandedSection({
                 initial={{ opacity: 0, x: -20 }}
                 animate={{ opacity: 1, x: 0 }}
                 transition={{ delay: 0.5, duration: 0.4 }}
-                className={`flex items-center gap-4 ${activeSection === "Skills" ? "mb-4" : "mb-8"}`}
+                className={`flex items-center gap-4 "mb-8"`}
               >
-                {Icon && currentSection && (
-                  <>
-                    <motion.div
-                      initial={{ scale: 0, rotate: -180 }}
-                      animate={{ scale: 1, rotate: 0 }}
-                      transition={{
-                        delay: 0.2,
-                        duration: 0.2,
-                        type: "spring",
-                      }}
-                    >
-                      <Icon
-                        size={48}
-                        strokeWidth={2}
-                        color={currentSection.color}
-                      />
-                    </motion.div>
-                    <h1 className="text-4xl font-bold text-neutral-800 dark:text-neutral-100 md:text-5xl lg:text-6xl">
-                      {activeSection}
-                    </h1>
-                  </>
-                )}
               </motion.div>
               
               <motion.div
@@ -120,9 +99,8 @@ export default function ExpandedSection({
                   </div>
                 )}
                 {activeSection === "Experience" && (
-                  <div className="space-y-6">
-                    <p className="text-xl">Your Experience content here...</p>
-                    <p>Outline your work history and roles here.</p>
+                  <div className="flex items-center justify-center w-full">
+                    <Experience />
                   </div>
                 )}
                 {activeSection === "Skills" && (
