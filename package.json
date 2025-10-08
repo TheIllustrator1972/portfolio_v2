@@ -2,7 +2,7 @@
   "name": "portfolio_v2",
   "version": "0.1.0",
   "private": true,
-  "homepage": "homepage": "https://nileshkamble.co.in",
+  "homepage": "https://nileshkamble.co.in",
 
   "scripts": {
     "dev": "next dev",
