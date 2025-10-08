@@ -2,16 +2,17 @@
 
 import {  motion } from "framer-motion";
 import FluidCursor from "@/components/FluidCursor";
-import { useRef, useState } from "react";
+import {  useState } from "react";
 import {
   BriefcaseBusiness,
   Layers,
-  X,
   TableOfContents
 } from "lucide-react";
 import ExpandedSection from "@/components/ExpandedSection";
 import IntroHeader from "@/components/IntroHeader";
 import EmailInput from "@/components/EmailInput";
+import SocialsComponent from "@/components/SocialsComponent";
+import { socialConfig } from "./constants";
 
 
 const sectionConfig = [
@@ -35,6 +36,7 @@ export default function Home() {
         </div>
       </div>
       <IntroHeader />
+      <SocialsComponent config={socialConfig}/>
       <motion.div
         initial="hidden"
         animate="visible"
@@ -42,7 +44,7 @@ export default function Home() {
       >
         <EmailInput />
 
-        <div className="mt-4 grid w-full max-w-2xl grid-cols-1 gap-3 sm:grid-cols-3 md:grid-cols-3">
+        <div className="mt-4 grid w-full max-w-2xl grid-cols-3 gap-2">
           {sectionConfig.map(({ key, color, icon: Icon }) => (
             <motion.button
               key={key}

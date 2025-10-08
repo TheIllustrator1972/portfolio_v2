@@ -37,6 +37,20 @@ export const metadata: Metadata = {
     },
   ],
   creator: "Nilesh",
+  openGraph: {
+    type: "website",
+    locale: "en_US",
+    url: "https://nileshkamble.co.in",
+    title: "Nilesh Portfolio",
+    description: "Developer Portfolio of Nilesh Kamble",
+    siteName: "Nilesh Portfolio",
+  },
+  twitter: {
+    card: "summary_large_image",
+    title: "Nilesh Portfolio",
+    description: "Developer Portfolio of Nilesh Kamble",
+    creator: "@devillus1972",
+  },
   icons: {
     icon: [
       {
@@ -44,8 +58,6 @@ export const metadata: Metadata = {
         sizes: "any",
       },
     ],
-    // shortcut: "/favicon.svg?v=2",
-    // apple: "/apple-touch-icon.svg?v=2",
   },
 };
 
