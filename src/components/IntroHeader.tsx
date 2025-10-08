@@ -9,7 +9,7 @@ const IntroHeader = () => {
       animate="visible"
     >
       <h2 className="text-secondary-foreground mt-1 text-xl font-semibold md:text-2xl">
-        Hey, I'm Nilesh 😉
+        Hey, I&apos;m Nilesh 😉
       </h2>
       <h1 className="text-4xl font-bold sm:text-5xl md:text-6xl lg:text-7xl">
         Software Engineer

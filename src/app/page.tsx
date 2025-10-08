@@ -71,7 +71,6 @@ export default function Home() {
         <ExpandedSection
             activeSection={activeSection}
             setActiveSection={setActiveSection}
-            sectionConfig={sectionConfig} 
             clickPosition={clickPosition}
         />
       </motion.div>

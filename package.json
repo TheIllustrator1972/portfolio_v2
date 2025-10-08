@@ -2,15 +2,15 @@
   "name": "portfolio_v2",
   "version": "0.1.0",
   "private": true,
-  "homepage": "https://github.com/TheIllustrator1972/portfolio_v2/",
+  "homepage": "homepage": "https://nileshkamble.co.in",
 
   "scripts": {
     "dev": "next dev",
-    "build": "next build",
+    "build": "next build && next export",
     "start": "next start",
     "lint": "eslint",
       "predeploy": "npm run build",
-  "deploy": "gh-pages -d dist"
+  "deploy": "gh-pages -d out"
   },
   "dependencies": {
     "@radix-ui/react-slot": "^1.2.3",

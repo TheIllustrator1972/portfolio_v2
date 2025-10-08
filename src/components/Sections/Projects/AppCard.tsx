@@ -1,6 +1,7 @@
 import { ExternalLink } from "lucide-react";
 import { formatRating } from "./helpers";
 import { AppStoreApp } from "./types";
+import Image from "next/image";
 
 interface CardProps {
     app: AppStoreApp;
@@ -27,7 +28,7 @@ const AppCard = (props: CardProps) => {
         }}
       >
         <div className="flex items-start gap-4 mb-4">
-          <img
+          <Image
             src={app.artworkUrl100}
             alt={`${app.trackName} icon`}
             className="w-16 h-16 rounded-xl flex-shrink-0"

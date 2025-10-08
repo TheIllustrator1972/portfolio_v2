@@ -2,11 +2,12 @@ import { motion, AnimatePresence } from "framer-motion";
 import { useEffect, useMemo, useState, useCallback } from "react";
 import * as d3 from "d3";
 import { skillsConfig } from "@/app/constants";
+import { IconType } from "react-icons";
 
 interface SkillNode extends d3.SimulationNodeDatum {
   id: string;
   skill: string;
-  icon: any;
+  icon: IconType;
   usage: number;
   description: string;
   x?: number | undefined;
@@ -69,7 +70,6 @@ export default function SkillsBubbleChart() {
     skillsConfig.map((d) => ({ ...d, x: undefined, y: undefined }))
   );
   const [activeId, setActiveId] = useState<string | null>(null);
-  const [hoveredId, setHoveredId] = useState<string | null>(null);
 
   const simulation = useMemo(() => {
     return (
@@ -111,7 +111,7 @@ export default function SkillsBubbleChart() {
       const { visualWidth, visualHeight } = getVisualSize(node, isActive);
       return (Math.max(visualWidth, visualHeight) / 2) * BASE_RADIUS_MULTIPLIER;
     },
-    [activeId, getVisualSize]
+    [ getVisualSize]
   );
 
   useEffect(() => {
@@ -120,7 +120,9 @@ export default function SkillsBubbleChart() {
       d3
         .forceCollide()
         .radius((d: any) =>
-          getCollisionRadius(d as SkillNode, d.id === activeId)
+          {
+            const node = d as SkillNode;
+            return getCollisionRadius(node as SkillNode, node.id === activeId)}
         )
     );
 
@@ -174,8 +176,6 @@ export default function SkillsBubbleChart() {
           <motion.div
             key={node.id}
             layout
-            onHoverStart={() => !isMobile && setHoveredId(node.id)}
-            onHoverEnd={() => !isMobile && setHoveredId(null)}
             onTouchStart={(e) => {
               e.stopPropagation();
               setActiveId(isActive ? null : node.id);

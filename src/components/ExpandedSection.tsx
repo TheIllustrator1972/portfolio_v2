@@ -1,4 +1,3 @@
-// ExpandedSection.tsx
 import { AnimatePresence, motion } from "framer-motion";
 import { X } from "lucide-react";
 import SkillsBubbleChart from "./Sections/SkillsBubbleChart";
@@ -6,29 +5,17 @@ import Projects from "./Sections/Projects/IndieApps";
 import WebProjectsSection from "./Sections/Projects/WebProjects";
 import Experience from "./Sections/Experience";
 
-// 1. Define the props interface
-interface SectionConfigItem {
-  key: string;
-  color: string;
-  icon: React.ElementType;
-}
-
 interface ExpandedSectionProps {
   activeSection: string | null;
   setActiveSection: (key: string | null) => void;
-  sectionConfig: SectionConfigItem[];
   clickPosition: { x: number; y: number };
 }
 
 export default function ExpandedSection({
   activeSection,
   setActiveSection,
-  sectionConfig,
   clickPosition,
 }: ExpandedSectionProps) {
-
-  const currentSection = sectionConfig.find((s) => s.key === activeSection);
-  const Icon = currentSection?.icon;
 
   return (
     <AnimatePresence>

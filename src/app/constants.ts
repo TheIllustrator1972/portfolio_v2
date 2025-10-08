@@ -18,6 +18,7 @@ import { VscVscode } from "react-icons/vsc";
 import { GrSwift } from "react-icons/gr";
 import { FaLinkedin, FaTwitter, FaGithub, FaApple } from "react-icons/fa";
 import { MdEmail } from "react-icons/md";
+import { IconType } from "react-icons";
 
 export const skillsConfig = [
   {
@@ -178,7 +179,7 @@ export const experiences = [
 export type SocialConfigItem = {
   name: string;
   url: string;
-  icon: any;
+  icon: IconType;
   color: string;
   description: string;
   external: boolean;
@@ -229,5 +230,48 @@ export const socialConfig: SocialConfigItem[] = [
       "text-red-500 hover:text-red-700 dark:text-red-400 dark:hover:text-red-600",
     description: "Send me an email",
     external: false,
+  },
+];
+
+export type ProjectConfig = {
+  id: number;
+  title: string;
+  description: string;
+  imagePath: string;
+  link: string;
+};
+
+export const PROJECTS_CONFIG: ProjectConfig[] = [
+  {
+    id: 1,
+    title: "Indie App Landing Page Template",
+    description:
+      "A customizable, modern landing page template designed for indie app developers. Built with React and Tailwind CSS, it features responsive layouts, smooth animations, and prebuilt sections for showcasing app features and download links.",
+    imagePath: "indie_app_landing_page_template",
+    link: "https://indie-app-landing-page-template.vercel.app/",
+  },
+  {
+    id: 2,
+    title: "XCode → Mockup",
+    description:
+      "A macOS utility that automatically captures Xcode simulator screenshots and arranges them into polished device mockups. Ideal for quickly generating marketing visuals or App Store previews.",
+    imagePath: "screenshot_placement",
+    link: "https://github.com/TheIllustrator1972/ScreenshotPlacement",
+  },
+  {
+    id: 3,
+    title: "ASCII Art Generator",
+    description:
+      "A fun web app that converts images or text into ASCII art in real time. Built with React, it lets users adjust character density, contrast, and export results directly as text or image files.",
+    imagePath: "ascii_art_generator",
+    link: "https://ascii-art-generator-theillustrator.netlify.app/",
+  },
+  {
+    id: 4,
+    title: "Sorting Visualizer",
+    description:
+      "An interactive tool that visually demonstrates how different sorting algorithms work. Users can control array size, animation speed, and watch algorithms like Bubble Sort, Merge Sort, and Quick Sort in action.",
+    imagePath: "sorting",
+    link: "https://sorting-visualizer-theillustrator.netlify.app/",
   },
 ];

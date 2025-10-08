@@ -1,6 +1,7 @@
 import { ExternalLink, RefreshCw, X } from "lucide-react";
 import { AppStoreApp } from "./types";
 import { formatFileSize, formatPrice, formatRating } from "./helpers";
+import Image from "next/image";
 
 interface ModalProps {
     app: AppStoreApp;
@@ -28,10 +29,9 @@ interface ModalProps {
           className="bg-white dark:bg-neutral-800 rounded-3xl max-w-5xl w-full max-h-[90vh] overflow-hidden flex flex-col border border-neutral-200 dark:border-neutral-700 shadow-2xl transition-transform duration-300 scale-100 opacity-100"
           onClick={(e) => e.stopPropagation()}
         >
-          {/* Modal Header */}
           <div className="sticky top-0 bg-white dark:bg-neutral-800 border-b border-neutral-200 dark:border-neutral-700 p-6 flex items-start justify-between z-10 flex-shrink-0">
             <div className="flex items-start gap-4 flex-1 min-w-0">
-              <img
+              <Image
                 src={app.artworkUrl100}
                 alt={`${app.trackName} icon`}
                 className="w-20 h-20 rounded-2xl flex-shrink-0 shadow-md"
@@ -101,7 +101,7 @@ interface ModalProps {
                           key={`screenshot-${index}`}
                           className="rounded-xl overflow-hidden border border-neutral-200 dark:border-neutral-700 shadow-md aspect-[9/16]" // Added aspect ratio for mobile screenshots
                         >
-                          <img
+                          <Image
                             src={screenshot}
                             alt={`${app.trackName} screenshot ${index + 1}`}
                             className="w-full h-full object-cover"
