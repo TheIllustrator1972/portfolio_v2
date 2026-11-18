@@ -7,7 +7,7 @@ export const profile = {
   location: "Remote · India (IST, UTC+5:30)",
   email: "nileshkamble54321@gmail.com",
   resumePath: "/resume.pdf",
-  resumeFilename: "Nilesh-Kamble-Resume.pdf",
+  resumeFilename: "Nilesh_Kamble_AI_Frontend_2026.pdf",
   avatar: "/profilePic.jpg",
   socials: [
     {
