@@ -38,9 +38,6 @@ export default async function WorkHoldingPage({ params }: Props) {
       <p className="type-mono mt-8 text-text-tertiary">{item.label}</p>
       <h1 className="type-display mt-3">{item.title}</h1>
       <p className="type-body-lg measure mt-4">{item.outcome}</p>
-      <p className="type-body measure mt-6">
-        The full case study is not published yet.
-      </p>
     </article>
   );
 }

@@ -4,7 +4,7 @@ export const work = [
     title: "Slack on-call AI agent",
     label: "AI · Internal tooling",
     outcome:
-      "Grounded answers for on-call engineers, built on Augment, Jira and LogRocket MCP and evaluated on the last 100 on-call issues.",
+      "A Slack agent that answers on-call questions from Jira and LogRocket, checked against the last 100 real incidents.",
     tags: ["MCP", "LLM", "Evals", "Slack"],
     order: 1,
   },
@@ -13,7 +13,7 @@ export const work = [
     title: "Subscription onboarding re-architecture",
     label: "Product · Frontend architecture",
     outcome:
-      "Replaced fragile form state with a reducer-based model and real-time readiness as the database comes online.",
+      "Rebuilt database subscription setup so the form stays reliable and shows when the service is actually ready.",
     tags: ["React", "TypeScript", "WebSockets"],
     order: 2,
   },
@@ -22,7 +22,7 @@ export const work = [
     title: "Operations Portal for SRE",
     label: "Internal platform",
     outcome:
-      "The support portal SRE uses daily, with role-based access control and cost analytics.",
+      "The portal SRE uses every day to support customers, with access by role and dashboards for usage and cost.",
     tags: ["React", "RBAC", "Dashboards"],
     order: 3,
   },

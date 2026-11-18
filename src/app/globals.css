@@ -2,6 +2,18 @@
 
 @custom-variant dark (&:where(.dark, .dark *));
 
+@property --spot-edge {
+  syntax: "<color>";
+  inherits: false;
+  initial-value: transparent;
+}
+
+@property --spot-line {
+  syntax: "<color>";
+  inherits: false;
+  initial-value: transparent;
+}
+
 :root {
   --bg: #fafafa;
   --surface: #ffffff;
@@ -433,7 +445,7 @@ body {
 
 html.dark .link-card:hover,
 html.dark .link-card:focus-visible {
-  background: var(--surface-muted);
+  background-color: var(--surface-muted);
   box-shadow: none;
 }
 
@@ -447,30 +459,39 @@ html.dark .link-card:focus-visible {
   position: relative;
   --spot-x: 50%;
   --spot-y: 50%;
+  --spot-fill: var(--surface);
+  --spot-line: var(--border);
+  --spot-edge: transparent;
+  border-color: transparent;
+  background-color: transparent;
+  background-image:
+    linear-gradient(var(--spot-fill), var(--spot-fill)),
+    radial-gradient(
+      140px circle at var(--spot-x) var(--spot-y),
+      var(--spot-edge),
+      transparent 68%
+    ),
+    linear-gradient(var(--spot-line), var(--spot-line));
+  background-clip: padding-box, border-box, border-box;
+  background-origin: padding-box, border-box, border-box;
+  transition:
+    border-color var(--duration-fast) var(--ease-out),
+    background-color var(--duration-fast) var(--ease-out),
+    box-shadow var(--duration-fast) var(--ease-out),
+    --spot-edge var(--duration-fast) var(--ease-out),
+    --spot-line var(--duration-fast) var(--ease-out);
 }
 
-.spotlight::before {
-  content: "";
-  position: absolute;
-  inset: 0;
-  border-radius: inherit;
-  padding: 1px;
-  background: radial-gradient(
-    140px circle at var(--spot-x) var(--spot-y),
-    var(--cursor),
-    transparent 68%
-  );
-  mask:
-    linear-gradient(#000 0 0) content-box,
-    linear-gradient(#000 0 0);
-  mask-composite: exclude;
-  -webkit-mask:
-    linear-gradient(#000 0 0) content-box,
-    linear-gradient(#000 0 0);
-  -webkit-mask-composite: xor;
-  opacity: 0;
-  pointer-events: none;
-  transition: opacity var(--duration-fast) var(--ease-out);
+.spotlight:hover,
+.spotlight:focus-visible {
+  border-color: transparent;
+  --spot-line: var(--border-strong);
+}
+
+html.dark .link-card.spotlight:hover,
+html.dark .link-card.spotlight:focus-visible {
+  --spot-fill: var(--surface-muted);
+  background-color: transparent;
 }
 
 @media (hover: hover) and (pointer: fine) and (prefers-reduced-motion: no-preference) {
@@ -489,8 +510,8 @@ html.dark .link-card:focus-visible {
     cursor: text;
   }
 
-  .spotlight:hover::before {
-    opacity: 1;
+  .spotlight:hover {
+    --spot-edge: var(--cursor);
   }
 }
 
@@ -623,10 +644,6 @@ html.dark .link-card:focus-visible {
   .reveal-item {
     opacity: 1 !important;
     transform: none !important;
-  }
-
-  .spotlight::before {
-    opacity: 0;
   }
 
   .liquid-cursor {
