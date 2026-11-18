@@ -47,4 +47,4 @@ When the domain is serving from Vercel:
 2. Delete `.github/workflows/deploy.yml` and `public/CNAME`.
 3. Turn off GitHub Pages in the repository settings.
 
-The resume buttons link to `/resume.pdf`, which is `public/resume.pdf`.
+The resume buttons link to `/Nilesh_Kamble_AI_Frontend_2026.pdf`.
